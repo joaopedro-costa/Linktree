@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat';
+    text-decoration: none;
+}
+
+html{
+    height: 100%;
+}
+
+
+body{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background{
+    zoom: 1.2;
+    position: absolute;
+    size: auto;
+    margin: 0 auto;   
+    animation: zoom 30s linear infinite alternate;
+    z-index: -1;
+}
+
+@keyframes zoom {
+    from{
+        transform: scale(100%);
+    }
+    to{
+        transform: scale(130%);
+        transform: rotate(30deg);
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edge{
+    object-fit: cover;
+    position: fixed;
+    z-index: 3;
+    border: 1px solid transparent;
+    width: 30vh;
+    height: 27.7vh;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: edgecolor 2s alternate infinite cubic-bezier(.32,-0.37,.54,1.31); 
+}
+
+@keyframes edgecolor {
+    from{
+        box-shadow: 0px 0px 5px 0px #c411c46e;
+        filter: hue-rotate(0deg);
+    }
+    
+    to{
+        box-shadow: 0px 0px 30px 0px #c729c7;
+        filter: hue-rotate(360deg);
+    }
+}
+
+.img{
+    position: absolute;
+    z-index: 1;
+    animation: up-profile 1s .2s cubic-bezier(.32,-0.37,.54,1.31) forwards, flutuant 1s 1s alternate infinite cubic-bezier(.5,0,.5,1);
+}
+
+@keyframes flutuant {
+    from{
+        top: 13vh;
+    }
+    to{
+        top: 14vh;
+    }
+}
+
+@keyframes up-profile {
+    from {
+        top: 35vh;
+    }
+    to {
+        top: 13vh;
+    }
+}
+
+#profile{
+    position: static;
+    z-index: -1;
+    width: 30vh;
+    border-radius: 50%;
+}
+
+.info{
+    position: relative;
+    top: 65px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(156, 156, 156, 0.1);
+    border-radius: 30px;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+    backdrop-filter: blur(4px);
+    animation: fade-width .5s .4s cubic-bezier(.32,-0.37,.54,1.31) forwards, fade-height .5s .7s cubic-bezier(.32,-0.37,.54,1.31) forwards;
+}
+
+@keyframes fade-width {
+    from{
+        width: 0px;
+    }
+
+    to{
+        width: 460px;
+    }
+}
+
+@keyframes fade-height {
+    from{
+        height: 0px;
+    }
+
+    to{
+        height: 570px;
+    }
+}
+
+.reflect{
+    top: -350px;
+    left: -100px;
+    width: 1000px;
+    height: 100px;
+    transform: rotate(-30deg);
+    background-color: rgba(255, 255, 255);
+    filter: blur(10px);
+    position: absolute;
+    mix-blend-mode: darken;
+    z-index: -1;
+    opacity: .06;
+    animation: reflect 1s ease-in-out 2s forwards ;
+}
+
+@keyframes reflect {
+    from{
+        top: -300;
+    }
+    to{
+        top: 700px;
+    }
+}
+
+.botoes{
+    position: fixed;
+    margin: 150px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0%;
+    animation: botao .7s 1s linear forwards;
+}
+
+@keyframes botao {
+    to{
+        opacity: 100%;
+    }
+}
+
+.botoes button{
+    overflow: hidden;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 100;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    border-radius: 15px;
+    width: 400px;
+    height: 7.5vh;
+}
+
+.botoes button:hover{
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right, rgb(166 89 238) 0%, rgb(98, 21, 170) 100%);
+    background-color: rgb(238, 16, 16);
+    border: 1px solid rgb(166 89 238);
+    font-weight: 500;
+    font-size: 25px;
+    box-shadow: 0px 0px 10px 0px rgb(98 21 170), 0px 0px 15px 0px rgba(205, 158, 248, 0.452);
+    animation: rgbcolor 3s linear reverse infinite;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+@keyframes rgbcolor {
+    from{
+        filter: hue-rotate(0deg);
+    }
+    
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    
+    body{
+        position: fixed;
+    }
+    
+    .background{
+        zoom: 2;
+    }
+    
+    @keyframes fade-width {
+        from{
+            width: 0px;
+        }
+    
+        to{
+            width: 330px;
+        }
+    }
+    
+    @keyframes fade-height {
+        from{
+            height: 0px;
+        }
+    
+        to{
+            height: 500px;
+        }
+    }
+
+    .botoes button{
+        width: 18rem;
+        height: 7.5vh;
+        border: 1px solid rgba(255, 255, 255, .3);
+    }
+
+    .botoes{
+        margin-bottom: 20px;
+    }
+
+    #profile{
+        width: 240px;
+    }
+
+    @keyframes flutuant {
+        from{
+            top: 16vh;
+        }
+        to{
+            top: 17vh;
+        }
+    }
+    
+    @keyframes up-profile {
+        from {
+            top: 35vh;
+        }
+        to {
+            top: 16vh;
+        }
+    }
+
+    .edge{
+        width: 240px;
+        height: 220px;
+    }
+}
+
