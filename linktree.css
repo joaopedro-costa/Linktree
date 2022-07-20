@@ -275,10 +275,10 @@ p{
 
     @keyframes flutuant {
         from{
-            top: 16vh;
+            top: 13vh;
         }
         to{
-            top: 17vh;
+            top: 14vh;
         }
     }
     
@@ -287,7 +287,7 @@ p{
             top: 35vh;
         }
         to {
-            top: 16vh;
+            top: 13vh;
         }
     }
 
