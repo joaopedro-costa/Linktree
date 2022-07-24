@@ -29,23 +29,20 @@ body{
     overflow: hidden;
 }
 
-.background{
-    zoom: 1.2;
-    position: absolute;
-    size: auto;
-    margin: 0 auto;   
-    animation: zoom 30s linear infinite alternate;
-    z-index: -1;
+iframe{
+    height: 100%;
+    width: 100%;
+    border: 0px;
 }
 
-@keyframes zoom {
-    from{
-        transform: scale(100%);
-    }
-    to{
-        transform: scale(130%);
-        transform: rotate(30deg);
-    }
+.background{
+    background-image: url(https://media.giphy.com/media/9tx0gy37p7oXu/giphy.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .container{
@@ -119,6 +116,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: rgba(156, 156, 156, 0.1);
+    /* background-color: hsla(0, 0%, 9%, 0.5); */
     border-radius: 30px;
     border: 1px solid rgba(150, 150, 150, 0.3);
     backdrop-filter: blur(4px);
